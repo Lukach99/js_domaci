@@ -33,13 +33,8 @@ function howMany(budget){
     while (money > 0 && noMoreFruit === false){
 
         /* checks if you can buy any fruit with leftover money */
-        for (let i = 0; i < fruits.length; i++) {
-            if( money - fruits[i].price < 0){
-                noMoreFruit = true;
-            } else {
-                noMoreFruit = false
-            }   
-        }
+
+        fruits.forEach(({price}) => { (money - price < 0) ? noMoreFruit = true : noMoreFruit = false });
 
         /* adding fruits to basket that you can buy until you don't have any money or while loop ends */
         for (let i = 0; i < fruits.length; i++) {
@@ -61,4 +56,4 @@ function howMany(budget){
 }
 
 isFruit(["jabuka", "burger", "banana", "naranca", "jagoda", "bzbzfbd", "banana"]); 
-howMany(50);
+howMany(2);
