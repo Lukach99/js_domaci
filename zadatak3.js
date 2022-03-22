@@ -1,17 +1,12 @@
 const userNum = process.argv[2];
-let factNum = 1;
+
 
 function fact(num){
-    if(num === 1){
-        return 
+    if(num === 0){
+        return 1
     }
 
-    fact(num-1);
-    
-    factNum *= num;
+    return num * fact(num - 1);    
 }
 
-
-fact(3)
-console.log(factNum);
-
+console.log(fact(userNum))
